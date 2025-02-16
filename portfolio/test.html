@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swapnil Thapaliya Portfolio</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    :root {
+      --bg-color: #1e1e1e;
+      --text-color: #ffffff;
+      --primary-color: #4e54c8;
+      --secondary-color: #8f94fb;
+      --card-bg: #2c2c2c;
+    }
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --card-bg: #f4f4f4;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card-bg);
+      border: 2px solid var(--secondary-color);
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .toggle-mode i {
+      font-size: 1.2rem;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .tech-item {
+      width: 140px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tech-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleMode()">
+    <i id="mode-icon" class="fas fa-moon"></i>
+    
+  </button>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+      let isLight = document.body.classList.contains('light-mode');
+      document.getElementById('mode-icon').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+      document.getElementById('mode-text').textContent = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+    }
+  </script>
+</body>
+</html>
